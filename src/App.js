@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BooksList from './components/BooksList';
 import BookForm from './components/BookForm';
 import Navigation from './components/Navigation';
+import Categories from './components/Categories'; // Import the Categories component
 
 const HomePage = () => (
   <div>
@@ -11,7 +12,7 @@ const HomePage = () => (
   </div>
 );
 
-const CategoriesPage = () => <h1>Categories Page</h1>;
+// Removed the placeholder for CategoriesPage
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
     </Router>
   );
