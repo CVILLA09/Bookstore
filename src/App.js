@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BooksList from './components/BooksList';
 import BookForm from './components/BookForm';
 import Navigation from './components/Navigation';
-import Categories from './components/Categories'; // Import the Categories component
+import Categories from './components/Categories';
+
 
 const HomePage = () => (
   <div>
