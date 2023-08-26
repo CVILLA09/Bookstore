@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Bookstore
-Microverse - M3 - W2/W3 - Bookstore website to understand how to parse a Zeplin design to create a UI.
-=======
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,4 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> dc556ef (Initialize project using Create React App)
