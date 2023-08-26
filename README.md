@@ -41,7 +41,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Math Magicians 🔮 <a name="about-project"></a>
+# Bookstore 📚 <a name="about-project"></a>
 
 **Bookstore** is a React-based web application that allows users to manage a collection of books. 
 The core functionality of the project includes:
