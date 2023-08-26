@@ -3,19 +3,15 @@ import BooksList from './components/BooksList';
 import BookForm from './components/BookForm';
 import Navigation from './components/Navigation';
 
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <BooksList />
-      <BookForm />
-    </div>
-  );
-};
+const HomePage = () => (
+  <div>
+    <h1>Home Page</h1>
+    <BooksList />
+    <BookForm />
+  </div>
+);
 
-const CategoriesPage = () => {
-  return <h1>Categories Page</h1>;
-};
+const CategoriesPage = () => <h1>Categories Page</h1>;
 
 function App() {
   return (

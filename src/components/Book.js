@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Book = () => {
-  const [book, setBook] = useState({ title: 'Sample Book', author: 'John Doe' });
+  const [book] = useState({ title: 'Sample Book', author: 'John Doe' });
 
   const deleteBook = () => {
     // Logic to delete the book
@@ -11,7 +11,7 @@ const Book = () => {
     <div>
       <h3>{book.title}</h3>
       <p>{book.author}</p>
-      <button onClick={deleteBook}>Delete</button>
+      <button onClick={deleteBook} type="button">Delete</button>
     </div>
   );
 };
