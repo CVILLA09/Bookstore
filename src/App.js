@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BooksList from './components/BooksList';
 import BookForm from './components/BookForm';
 import Navigation from './components/Navigation';
-import Categories from './components/Categories';
-
+import Categories from './components/Categories';  // Add this line
 
 const HomePage = () => (
   <div>
@@ -13,15 +12,13 @@ const HomePage = () => (
   </div>
 );
 
-// Removed the placeholder for CategoriesPage
-
 function App() {
   return (
     <Router>
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/categories" element={<Categories />} />  // Updated this line
       </Routes>
     </Router>
   );
