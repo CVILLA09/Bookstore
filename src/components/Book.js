@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({ book }) => {
-  /* eslint-disable no-console */
-  console.log('Book prop:', book);
-  /* eslint-enable no-console */
-
   if (!book) {
     return <div>Loading...</div>;
   }
