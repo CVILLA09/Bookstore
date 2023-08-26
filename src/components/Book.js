@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Book = () => {
-  const [book] = useState({ title: 'Sample Book', author: 'John Doe' });
-
+const Book = ({ book }) => {
   const deleteBook = () => {
     // Logic to delete the book
   };
