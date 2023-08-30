@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 
 const Book = ({ book }) => {
+  const dispatch = useDispatch();
+
   if (!book) {
     return <div>Loading...</div>;
   }
-
-  const dispatch = useDispatch();
 
   const deleteBook = () => {
     dispatch(removeBook({ item_id: book.item_id }));
