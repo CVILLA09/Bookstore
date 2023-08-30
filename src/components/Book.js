@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
 const Book = ({ book }) => {
   if (!book) {
     return <div>Loading...</div>;
   }
 
+  const dispatch = useDispatch();
+
   const deleteBook = () => {
-    // Logic to delete the book
+    dispatch(removeBook({ item_id: book.item_id }));
   };
 
   return (
@@ -21,6 +25,7 @@ const Book = ({ book }) => {
 
 Book.propTypes = {
   book: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
