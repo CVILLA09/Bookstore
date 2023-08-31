@@ -15,4 +15,28 @@ export const createApp = async () => {
   }
 };
 
+// Function to add a new book
+export const addBookAPI = async (appId, book) => {
+  const url = `/apps/${appId}/books`;
+  try {
+    const response = await api.post(url, book);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding book:", error);
+    return null;
+  }
+};
+
+// Function to remove a book
+export const removeBookAPI = async (appId, itemId) => {
+  const url = `/apps/${appId}/books/${itemId}`;
+  try {
+    const response = await api.delete(url);
+    return response.data;
+  } catch (error) {
+    console.error("Error removing book:", error);
+    return null;
+  }
+};
+
 export default api;
