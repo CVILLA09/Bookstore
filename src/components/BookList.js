@@ -14,17 +14,17 @@ const BookList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       const url = `/apps/${appId}/books`;
-      api.get(url)
-        .then((response) => {
-          const fetchedBooks = Object.values(response.data).flat();
-          dispatch(addBooksToStore(fetchedBooks));
-        })
-        .catch((error) => {
-          console.error('Error fetching books:', error);
-        });
+      try {
+        const response = await api.get(url);
+        const fetchedBooks = Object.values(response.data).flat();
+        dispatch(addBooksToStore(fetchedBooks));
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching books:', error);
+      }
     };
     fetchBooks();
-  }, [dispatch]);
+  }, [dispatch, appId]); // Added appId to the dependency array
 
   return (
     <div>

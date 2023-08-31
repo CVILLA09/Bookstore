@@ -1,4 +1,3 @@
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { addBookAPI, removeBookAPI } from '../../api/bookstoreAPI';
 
@@ -14,7 +13,7 @@ export const addBookAsync = createAsyncThunk(
   async (book) => {
     const addedBook = await addBookAPI(appId, book);
     return addedBook;
-  }
+  },
 );
 
 // Create an async thunk for removing a book
@@ -23,7 +22,7 @@ export const removeBookAsync = createAsyncThunk(
   async (itemId) => {
     const removed = await removeBookAPI(appId, itemId);
     return removed;
-  }
+  },
 );
 
 export const booksSlice = createSlice({
