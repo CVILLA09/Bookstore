@@ -26,4 +26,15 @@ export const removeBookAPI = async (appId, itemId) => {
   }
 };
 
+// Function to fetch all books
+export const fetchBooksAPI = async (appId) => {
+  const url = `/apps/${appId}/books`;
+  try {
+    const response = await api.get(url);
+    return response.data;
+  } catch (error) {
+    return null;
+  }
+};
+
 export default api;

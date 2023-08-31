@@ -31,7 +31,7 @@ export const fetchBooksAsync = createAsyncThunk(
   async () => {
     const fetchedBooks = await fetchBooksAPI(appId);
     return fetchedBooks;
-  }
+  },
 );
 
 export const booksSlice = createSlice({
@@ -51,9 +51,7 @@ export const booksSlice = createSlice({
           state.splice(index, 1);
         }
       })
-      .addCase(fetchBooksAsync.fulfilled, (state, action) => {
-        return action.payload;
-      });
+      .addCase(fetchBooksAsync.fulfilled, (state, action) => action.payload);
   },
 });
 
