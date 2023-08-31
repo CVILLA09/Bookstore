@@ -22,7 +22,7 @@ export const addBookAPI = async (appId, book) => {
     const response = await api.post(url, book);
     return response.data;
   } catch (error) {
-    //console.error('Error adding book:', error);
+    // console.error('Error adding book:', error);
     return null;
   }
 };
@@ -34,7 +34,7 @@ export const removeBookAPI = async (appId, itemId) => {
     const response = await api.delete(url);
     return response.data;
   } catch (error) {
-    //console.error('Error removing book:', error);
+    // console.error('Error removing book:', error);
     return null;
   }
 };
