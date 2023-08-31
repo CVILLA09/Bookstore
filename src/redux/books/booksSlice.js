@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { addBookAPI, removeBookAPI, fetchBooksAPI } from '../../api/bookstoreAPI';
 
+const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const appId = 'BZ0QGrAujAzZHCoi1o4f';
+
 // Initial state
 const initialState = [];
-
-// Fetch App ID from .env file
-const appId = process.env.REACT_APP_BOOKSTORE_APP_ID;
 
 // Create an async thunk for adding a book
 export const addBookAsync = createAsyncThunk(
@@ -29,7 +29,7 @@ export const removeBookAsync = createAsyncThunk(
 export const fetchBooksAsync = createAsyncThunk(
   'books/fetchBooks',
   async () => {
-    const fetchedBooks = await fetchBooksAPI(appId);
+    const fetchedBooks = await fetchBooksAPI(API_URL, appId); // Pass both API_URL and appId
     return fetchedBooks;
   },
 );
