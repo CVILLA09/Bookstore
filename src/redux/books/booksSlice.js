@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { addBookAPI, removeBookAPI, fetchBooksAPI } from '../../api/bookstoreAPI'; // Add your fetch API method here
+import { addBookAPI, removeBookAPI, fetchBooksAPI } from '../../api/bookstoreAPI';
 
 // Initial state
 const initialState = [];
@@ -29,7 +29,7 @@ export const removeBookAsync = createAsyncThunk(
 export const fetchBooksAsync = createAsyncThunk(
   'books/fetchBooks',
   async () => {
-    const fetchedBooks = await fetchBooksAPI(appId); // Use your API method to fetch books
+    const fetchedBooks = await fetchBooksAPI(appId);
     return fetchedBooks;
   }
 );
