@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import api, { createApp } from '../api/bookstoreAPI'; // Import the Axios instance and createApp function
+import api, { createApp } from '../api/bookstoreAPI';
 import Book from './Book';
 import { addBooksToStore } from '../redux/books/booksSlice';
 
