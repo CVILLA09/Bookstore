@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { addBookAPI, removeBookAPI } from '../../api/bookstoreAPI';
+import { addBookAPI, removeBookAPI, fetchBooksAPI } from '../../api/bookstoreAPI'; // Add your fetch API method here
 
 // Initial state
 const initialState = [];
@@ -25,6 +25,15 @@ export const removeBookAsync = createAsyncThunk(
   },
 );
 
+// Create an async thunk to fetch books from the API
+export const fetchBooksAsync = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    const fetchedBooks = await fetchBooksAPI(appId); // Use your API method to fetch books
+    return fetchedBooks;
+  }
+);
+
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
@@ -41,6 +50,9 @@ export const booksSlice = createSlice({
         if (index !== -1) {
           state.splice(index, 1);
         }
+      })
+      .addCase(fetchBooksAsync.fulfilled, (state, action) => {
+        return action.payload;
       });
   },
 });
