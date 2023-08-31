@@ -10,17 +10,25 @@ const BookList = () => {
 
   useEffect(() => {
     const fetchBooks = async () => {
-      const appId = await createApp();
+      // Check if the app ID already exists in local storage
+      let appId = localStorage.getItem('appId');
+
+      // If not, create a new app ID and store it in local storage
+      if (!appId) {
+        appId = await createApp();
+        localStorage.setItem('appId', appId);
+      }
+
+      // Fetch books only if appId exists
       if (appId) {
         const url = `/apps/${appId}/books`;
-        api.get(url)
-          .then((response) => {
-            const fetchedBooks = Object.values(response.data);
-            dispatch(addBooksToStore(fetchedBooks));
-          })
-          .catch((error) => {
-            console.error('There was an error fetching books:', error);
-          });
+        try {
+          const response = await api.get(url);
+          const fetchedBooks = Object.values(response.data);
+          dispatch(addBooksToStore(fetchedBooks));
+        } catch (error) {
+          // Handle the error appropriately
+        }
       }
     };
     fetchBooks();

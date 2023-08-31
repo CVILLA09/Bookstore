@@ -7,9 +7,7 @@ export const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBooksToStore: (state, action) => {
-      return action.payload;
-    },
+    addBooksToStore: (state, action) => action.payload,
     addBook: (state, action) => {
       state.push(action.payload);
     },
