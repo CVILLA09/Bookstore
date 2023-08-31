@@ -1,22 +1,14 @@
 import axios from 'axios';
 
+// Get the App ID from the .env file
+const appId = process.env.REACT_APP_BOOKSTORE_APP_ID;
+
 const api = axios.create({
   baseURL: 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi',
 });
 
-// Function to create a new app and get its ID
-export const createApp = async () => {
-  try {
-    const response = await api.post('/apps/');
-    return response.data;
-  } catch (error) {
-    // console.error('Error creating app:', error);
-    return null;
-  }
-};
-
 // Function to add a new book
-export const addBookAPI = async (appId, book) => {
+export const addBookAPI = async (book) => {
   const url = `/apps/${appId}/books`;
   try {
     const response = await api.post(url, book);
@@ -28,7 +20,7 @@ export const addBookAPI = async (appId, book) => {
 };
 
 // Function to remove a book
-export const removeBookAPI = async (appId, itemId) => {
+export const removeBookAPI = async (itemId) => {
   const url = `/apps/${appId}/books/${itemId}`;
   try {
     const response = await api.delete(url);
