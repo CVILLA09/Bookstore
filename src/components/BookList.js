@@ -19,8 +19,8 @@ const BookList = () => {
           const fetchedBooks = Object.values(response.data).flat();
           dispatch(addBooksToStore(fetchedBooks));
         })
-        .catch(() => {
-          // Handle error
+        .catch((error) => {
+          console.error('Error fetching books:', error);
         });
     };
     fetchBooks();
