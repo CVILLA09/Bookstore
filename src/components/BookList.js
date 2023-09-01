@@ -1,34 +1,40 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect, useRef } from 'react';
+import { fetchBooksAsync } from '../redux/books/booksSlice';
 import Book from './Book';
-import { fetchBooksAsync, removeBookAsync } from '../redux/books/booksSlice';
 
 const BookList = () => {
+  const idRef = useRef();
   const dispatch = useDispatch();
 
-  // Fetch books from the API when the component mounts
   useEffect(() => {
     dispatch(fetchBooksAsync());
   }, [dispatch]);
 
-  // Use useSelector to get books and status from Redux store
-  const books = useSelector((state) => state.books.books);
+  const { books } = useSelector((state) => state.books);
   const status = useSelector((state) => state.books.status);
 
-  // Function to handle book removal
-  const handleRemoveBook = (id) => {
-    dispatch(removeBookAsync(id));
-  };
-
-  // Loading and error states
   if (status === 'loading') return <p>Loading...</p>;
   if (status === 'failed') return <p>Error loading books</p>;
 
   return (
-    <div>
-      {books.map((book) => (
-        <Book key={book.id} book={book} onRemove={handleRemoveBook} />
-      ))}
+    <div className="book-container">
+      {Object.entries(books).map(([id, bookArray]) => {
+        const book = bookArray[0];
+        idRef.current = id;
+
+        return (
+          <Book
+            id={idRef.current}
+            key={idRef.current}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+            chapter={book.chapter}
+            percentage={book.percentage}
+          />
+        );
+      })}
     </div>
   );
 };
