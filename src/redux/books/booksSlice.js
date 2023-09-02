@@ -22,7 +22,7 @@ export const removeBookAsync = createAsyncThunk('books/removeBookAsync', async (
 });
 
 const initialState = {
-  books: {},
+  books: [],
   status: 'idle',
   error: null,
 };
