@@ -4,7 +4,9 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
 import { removeBookAsync } from '../redux/books/booksSlice';
 
-const BookDetails = ({ id, title, author, category, chapter = 0, percentage = 0 }) => {
+const BookDetails = ({
+  id, title, author, category, chapter, percentage,
+}) => {
   const dispatch = useDispatch();
 
   const handleRemoveBook = () => {
@@ -47,6 +49,11 @@ BookDetails.propTypes = {
   category: PropTypes.string.isRequired,
   chapter: PropTypes.number,
   percentage: PropTypes.number,
+};
+
+BookDetails.defaultProps = {
+  chapter: 0,
+  percentage: 0,
 };
 
 export default BookDetails;

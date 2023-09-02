@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useRef } from 'react';
 import { fetchBooksAsync } from '../redux/books/booksSlice';
-import Book from './Book';
+import BookDetails from './BookDetails';
 
 const BookList = () => {
   const idRef = useRef();
