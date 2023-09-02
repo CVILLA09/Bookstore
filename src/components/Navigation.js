@@ -1,10 +1,26 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { BsPersonCircle } from 'react-icons/bs';
+import '../styles/navigation.css';
 
-const Navigation = () => (
-  <nav>
-    <Link to="/">Home</Link>
-    <Link to="/categories">Categories</Link>
-  </nav>
-);
+function Navigation() {
+  return (
+    <header>
+      <h1 className="title">Bookstore</h1>
+      <nav className="list-container">
+        <ul className="list">
+          <li className="list-item">
+            <NavLink exact to="/">Home</NavLink>
+          </li>
+          <li className="list-item">
+            <NavLink to="/categories">Categories</NavLink>
+          </li>
+        </ul>
+      </nav>
+      <span className="user-icon">
+        <BsPersonCircle />
+      </span>
+    </header>
+  );
+}
 
 export default Navigation;
