@@ -4,22 +4,15 @@ import BookForm from './components/BookForm';
 import Navigation from './components/Navigation';
 import Categories from './components/Categories';
 
-const HomePage = () => (
-  <div>
-    <h1>Home Page</h1>
-    <BookList />
-  </div>
-);
-
 function App() {
   return (
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<BookList />} />
         <Route path="/categories" element={<Categories />} />
-        {' '}
       </Routes>
+      <BookForm />
     </Router>
   );
 }
