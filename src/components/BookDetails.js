@@ -3,6 +3,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
 import { removeBookAsync } from '../redux/books/booksSlice';
+import '../styles/bookDetails.css';
 
 const BookDetails = ({
   id, title, author, category, chapter, percentage,
