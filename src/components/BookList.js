@@ -24,7 +24,7 @@ const BookList = () => {
         idRef.current = id;
 
         return (
-          <Book
+          <BookDetails
             id={idRef.current}
             key={idRef.current}
             title={book.title}
