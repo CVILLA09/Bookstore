@@ -67,6 +67,10 @@
   cursor: pointer;
 }
 
+.buttons button:hover {
+  color: #044177;
+}
+
 .button-separator {
   display: flex;
   width: 1px;
