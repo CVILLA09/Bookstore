@@ -10,7 +10,7 @@ function Navigation() {
       <nav className="list-container">
         <ul className="list">
           <li className="list-item">
-            <NavLink className="list-text" exact to="/">Home</NavLink>
+            <NavLink className="list-text" exact to="/">Books</NavLink>
           </li>
           <li className="list-item">
             <NavLink className="list-text" to="/categories">Categories</NavLink>

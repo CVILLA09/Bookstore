@@ -54,3 +54,7 @@ li {
   color: #0290ff;
   cursor: pointer;
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
