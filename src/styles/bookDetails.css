@@ -67,6 +67,23 @@
   cursor: pointer;
 }
 
+.update button {
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #fff;
+  background-color: #0290ff;
+  border-radius: 3px;
+  width: 11.5rem;
+  height: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
 .buttons button:hover {
   color: #044177;
 }
@@ -153,21 +170,4 @@
   font-weight: 300;
   font-size: 1.1rem;
   padding-bottom: 1rem;
-}
-
-.update button {
-  display: flex;
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: #fff;
-  background-color: #0290ff;
-  border-radius: 3px;
-  width: 11.5rem;
-  height: 2rem;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.5px;
-  border: none;
-  cursor: pointer;
 }

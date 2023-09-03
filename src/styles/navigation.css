@@ -41,13 +41,13 @@ li {
 .list-text {
   display: flex;
   width: 3.688rem;
-  height: .8rem;
+  height: 0.8rem;
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   color: #555;
   text-decoration: none;
   transition: color 0.3s;
-  letter-spacing: 0.05rem; 
+  letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
 
@@ -63,6 +63,8 @@ li {
   cursor: pointer;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
