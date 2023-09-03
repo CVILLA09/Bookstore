@@ -1,5 +1,5 @@
 header {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -42,7 +42,7 @@ li {
   display: flex;
   width: 3.688rem;
   height: 0.8rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.1rem;
   color: #555;
   text-decoration: none;
