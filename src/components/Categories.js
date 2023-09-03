@@ -1,5 +1,10 @@
 import React from 'react';
+import '../styles/categories.css';
 
-const Categories = () => <div><h1>Categories Page</h1></div>;
+const Categories = () => (
+  <div>
+    <h2 className="title-categories">🚧 Under construction 🚧</h2>
+  </div>
+);
 
 export default Categories;

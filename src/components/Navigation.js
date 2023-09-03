@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { BsPersonCircle } from 'react-icons/bs';
+import { IconContext } from 'react-icons';
 import '../styles/navigation.css';
 
 function Navigation() {
@@ -9,15 +10,17 @@ function Navigation() {
       <nav className="list-container">
         <ul className="list">
           <li className="list-item">
-            <NavLink exact to="/">Home</NavLink>
+            <NavLink className="list-text" exact to="/">Books</NavLink>
           </li>
           <li className="list-item">
-            <NavLink to="/categories">Categories</NavLink>
+            <NavLink className="list-text" to="/categories">Categories</NavLink>
           </li>
         </ul>
       </nav>
       <span className="user-icon">
-        <BsPersonCircle />
+        <IconContext.Provider value={{ className: 'react-icons' }}>
+          <BsPersonCircle />
+        </IconContext.Provider>
       </span>
     </header>
   );

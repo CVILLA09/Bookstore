@@ -7,18 +7,9 @@ const FormAddBook = () => {
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e) => {
-    setAuthor(e.target.value);
-  };
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-  };
-
+  const handleTitleChange = (e) => setTitle(e.target.value);
+  const handleAuthorChange = (e) => setAuthor(e.target.value);
+  const handleCategoryChange = (e) => setCategory(e.target.value);
   const handleAddBook = () => {
     setTitle('');
     setAuthor('');
@@ -26,10 +17,11 @@ const FormAddBook = () => {
   };
 
   return (
-    <div className="addBook-container">
-      <h2>Add a new book</h2>
+    <section className="addBook-container">
+      <h2 className="form-title">ADD NEW BOOK</h2>
       <form className="form-container">
         <input
+          className="input-title"
           type="text"
           id="title"
           name="title"
@@ -39,6 +31,7 @@ const FormAddBook = () => {
           value={title}
         />
         <input
+          className="input-author"
           type="text"
           id="author"
           name="author"
@@ -47,15 +40,22 @@ const FormAddBook = () => {
           onChange={handleAuthorChange}
           value={author}
         />
-        <input
-          type="text"
+        <select
+          className="input-category"
           id="category"
           name="category"
-          placeholder="Category"
           required
           onChange={handleCategoryChange}
           value={category}
-        />
+        >
+          <option value="" disabled selected>Category</option>
+          <option value="Action">Action</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Comedy">Romance</option>
+          <option value="Comedy">Mistery</option>
+          <option value="Comedy">Historical</option>
+        </select>
         <AddBook
           title={title}
           author={author}
@@ -63,7 +63,7 @@ const FormAddBook = () => {
           onBookAdded={handleAddBook}
         />
       </form>
-    </div>
+    </section>
   );
 };
 
