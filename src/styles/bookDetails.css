@@ -68,6 +68,7 @@
 }
 
 .update button {
+  font-family: 'RobotoSlab-light', sans-serif;
   display: flex;
   font-size: 0.9rem;
   font-weight: 300;
@@ -82,6 +83,7 @@
   letter-spacing: 0.5px;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .buttons button:hover {
