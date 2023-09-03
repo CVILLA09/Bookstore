@@ -20,12 +20,12 @@ const BookDetails = ({
   };
 
   return (
-    <section className="book-element--container">
-      <div className="book-info">
-        <p className="category">{category}</p>
-        <p className="subtitle">{title}</p>
-        <p className="author">{author}</p>
-        <div className="buttons">
+    <section className="d-flex book-element--container">
+      <div className="d-flex roboto-font book-info">
+        <p className="roboto-font category">{category}</p>
+        <p className="roboto-font subtitle">{title}</p>
+        <p className="roboto-font author">{author}</p>
+        <div className="d-flex buttons">
           <button id={id} type="button">Comments</button>
           <span className="button-separator" />
           <button type="button" onClick={handleRemoveBook}>Delete</button>
@@ -33,19 +33,19 @@ const BookDetails = ({
           <button id={id} type="button">Edit</button>
         </div>
       </div>
-      <div className="percentage-container">
+      <div className="d-flex percentage-container">
         <div className="percentage-animation">
           <CircularProgressbar className="circular-progressbar" value={percentage} />
         </div>
-        <div className="percentage-info">
-          <p className="percentage">{`${percentage}%`}</p>
-          <p className="completed">Completed</p>
+        <div className="d-flex roboto-font percentage-info">
+          <p className="roboto-font percentage">{`${percentage}%`}</p>
+          <p className="roboto-font completed">Completed</p>
         </div>
       </div>
       <span className="section-separator" />
-      <div className="update">
-        <p className="update-title">CURRENT CHAPTER</p>
-        <p className="chapter-p">{`Chapter ${chapter}`}</p>
+      <div className="d-flex roboto-font update">
+        <p className="roboto-font update-title">CURRENT CHAPTER</p>
+        <p className="roboto-font chapter-p">{`Chapter ${chapter}`}</p>
         <button id={id} type="button">Update Progress</button>
       </div>
     </section>
