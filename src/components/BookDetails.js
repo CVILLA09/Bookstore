@@ -6,9 +6,14 @@ import { removeBookAsync } from '../redux/books/booksSlice';
 import '../styles/bookDetails.css';
 
 const BookDetails = ({
-  id, title, author, category, chapter, percentage,
+  id, title, author, category,
 }) => {
   const dispatch = useDispatch();
+  const percentage = Math.floor(Math.random() * 101);
+  const chapter = percentage <= 10 ? 1 : Math.min(
+    Math.max(parseInt(percentage.toString()[0], 10), 1),
+    percentage === 100 ? 10 : 9,
+  );
 
   const handleRemoveBook = () => {
     dispatch(removeBookAsync(id));
@@ -17,27 +22,31 @@ const BookDetails = ({
   return (
     <section className="book-element--container">
       <div className="book-info">
-        <p>{category}</p>
-        <p>{title}</p>
-        <p>{author}</p>
+        <p className="category">{category}</p>
+        <p className="subtitle">{title}</p>
+        <p className="author">{author}</p>
         <div className="buttons">
-          <button type="button">Comments</button>
-          <span className="separator">|</span>
+          <button id={id} type="button">Comments</button>
+          <span className="button-separator" />
           <button type="button" onClick={handleRemoveBook}>Delete</button>
-          <span className="separator">|</span>
-          <button type="button">Edit</button>
+          <span className="button-separator" />
+          <button id={id} type="button">Edit</button>
         </div>
       </div>
-      <div>
-        <div className="percentage-container">
-          <CircularProgressbar className="circular-progressbar" value={percentage} text={`${percentage} %`} />
+      <div className="percentage-container">
+        <div className="percentage-animation">
+          <CircularProgressbar className="circular-progressbar" value={percentage} />
+        </div>
+        <div className="percentage-info">
+          <p className="percentage">{`${percentage}%`}</p>
           <p className="completed">Completed</p>
         </div>
       </div>
+      <span className="section-separator" />
       <div className="update">
-        <p>Current Chapter</p>
-        <p>{chapter}</p>
-        <button type="button">Update Progress</button>
+        <p className="update-title">CURRENT CHAPTER</p>
+        <p className="chapter-p">{`Chapter ${chapter}`}</p>
+        <button id={id} type="button">Update Progress</button>
       </div>
     </section>
   );
@@ -48,13 +57,6 @@ BookDetails.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  chapter: PropTypes.number,
-  percentage: PropTypes.number,
-};
-
-BookDetails.defaultProps = {
-  chapter: 0,
-  percentage: 0,
 };
 
 export default BookDetails;
